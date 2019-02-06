@@ -1,0 +1,27 @@
+- hosts: all
+  tasks:
+       
+          - name: install apache
+            apt: name=apachemaven state=latest
+            notify:
+                    - start apache       
+
+                    - name: insatll git
+                      pckg: name=git state=latest
+                      notify:
+                              - start git
+
+                              - name: install tomcat8
+                                pckg: name=apache tomcat8 state=latest
+                                notify:
+                                       - start tomcat
+
+                                       - name: install jenkins
+                                         pckg: name=jenkins state=latest
+                                         notify:
+                                                 - start jenkins
+
+                                                 - name: install chef
+                                                   pckg: name=chef state=latest
+                                                   notify:
+                                                           - start chef
