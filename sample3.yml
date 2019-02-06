@@ -1,0 +1,30 @@
+- hosts: all
+  remote_user: root
+  tasks:
+          - name: install apache
+            apt: name=apache2 state=latest
+            when: ansible_distribution=='ubuntu'
+          
+          - name: install httpd
+            apt: name=httpd state=latest
+            when: ansible_distribution=='centos'
+            
+          - name: to update packages
+            raw: apt-get update
+            when: ansible_distribution=='ubuntu'
+
+          - name: to update packages
+            raw: yum -y update
+            when: ansible_distribution=='centos'
+
+          - name: to deploy the file
+            copy:
+                    src: /var/index.html
+                    dest: /var/www/html/index.html
+
+          - name: install apache
+            apt: name=apache2 state=latest
+            when: ansible_distribution=='ubuntu'
+          - notify:
+                  - start apache
+            
