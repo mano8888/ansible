@@ -1,0 +1,27 @@
+- hosts: all
+  tasks:
+          - name: install git 
+            apt: name=git state=latest
+          - notify:
+                  - start git
+                   
+                  - name: install maven
+                    apt: name=maven state=latest
+                  - notify:
+                          - start maven
+
+                          - name: install jenkins
+                            apt: name=jenkins state=latest
+                          - notify:
+                            - start jenkins
+
+                            - name: install docker 
+                              apt: name=docker state=latest
+                           - notify:
+                              - start docker
+                              - name: install chef 
+                                apt: name=chef state=latest
+                            - notify:
+                               - start chef
+
+
