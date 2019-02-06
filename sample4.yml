@@ -1,0 +1,33 @@
+- hosts: all
+  remote_user: root
+  tasks:
+          - name: to update packages
+            raw: apt-get update
+            when: ansible_distribution=='ubuntu'
+
+          - name: to update packages
+            raw: yum -y update
+            when: ansible_distribution=='centos'
+
+          - name: install git
+            apt: name=git state=latest
+          - notify: 
+          - start git
+          - name: install maven
+            apt: name=maven state=latest
+          - notify:
+                  - start maven
+
+                  - name: nginx
+                    service: name=nginx state=latest
+
+                  - name: to deploy war file
+                    copy:
+                            src: /var/index.html
+                            dest: /var/www/html/index.html
+                  - name: install apache
+                   apt: name=apache state=latest
+                   when: ansible_distribution=='ubuntu'
+                  - name: install httpd
+                    apt: name=httpd state=latest
+                    when: ansible_distribution=='centos'        

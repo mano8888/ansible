@@ -1,0 +1,29 @@
+[33mcommit dbe7a1d4a94999645104fac8ffb3cb3f82c6edf5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: mano8888 <manukambakam.k@gmail.com>
+Date:   Tue Feb 5 21:11:49 2019 -0800
+
+    play3
+
+[33mcommit 9ba9bda8b85396dcd44235917f9dd1f47d933de0[m
+Author: mano8888 <manukambakam.k@gmail.com>
+Date:   Tue Feb 5 20:49:59 2019 -0800
+
+    book2
+
+[33mcommit f98b0a2f364769500a67f346c502b94fde5dcf9b[m[33m ([m[1;32mmano[m[33m)[m
+Author: mano8888 <manukambakam.k@gmail.com>
+Date:   Tue Feb 5 20:25:56 2019 -0800
+
+    again created a new playbook
+
+[33mcommit fb228e53c56b1bedec371f5946037a194842a889[m
+Author: mano8888 <manukambakam.k@gmail.com>
+Date:   Tue Feb 5 20:15:19 2019 -0800
+
+    written sample ansible pro
+
+[33mcommit 59b897fca92ec9aaa57bc713258dbabce9623f7a[m
+Author: mano8888 <41292837+mano8888@users.noreply.github.com>
+Date:   Tue Feb 5 19:55:21 2019 -0800
+
+    Initial commit
